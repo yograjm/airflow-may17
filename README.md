@@ -75,9 +75,9 @@
 
     `mkdir -p ./dags ./logs ./plugins ./config`
 
-    Add `processing_data.py` file to `./dags` folder
+    Add `data_processing.py` file to `./dags` folder
 
-    Create `append_data_to_db_pipeline.py` file in `./dags` folder
+    Create `append_data_to_db_pipeline.py` file in `./dags` _datafolder
 
     `echo -e "AIRFLOW_UID=$(id -u)" > .env`
 
@@ -85,9 +85,10 @@
 
     `docker compose up`
 
-  - UI running
-  - DAG creating
-  - Pipeline execution success -- data appending to the DB
+  - Access the UI running at port 8080
+  - Check the DAG it should be created
+  - Trigger the DAG
+  - After Pipeline execution success --> data should be appending to the DB
   - Stop Airflow: 
   
     `docker compose down --volumes --rmi all`
